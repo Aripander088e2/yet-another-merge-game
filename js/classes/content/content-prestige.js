@@ -113,7 +113,7 @@ class ContentPrestige {
     }
 
     getQuantumFoamBoost() {
-        return new Decimal(1).add(game.prestige.bankedQuantumFoam.mul(0.01));
+        return new Decimal(1).add(game.prestige.bankedQuantumFoam.mul(0.15));
     }
 
     getQFMilestoneInfo() {
