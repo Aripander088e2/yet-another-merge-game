@@ -49,9 +49,9 @@ class ContentPrestige {
                 }
             }),
             socialBoost: new PrestigeUpgrade("Support Boost", "\"Support Me\" boost is better",
-                level => Decimal.pow(10000, (level + 1) ** 3).mul(100000),
+                level => Decimal.pow(100, (level + 1) ** 3).mul(100000),
                 level => new Decimal(3).mul(Decimal.pow(3, level)).pow(game.isotopes.upgrades.socialBoost.apply()), {
-                    maxLevel: 2,
+                    maxLevel: 6,
                     updateOn: () => [game.isotopes.upgrades.socialBoost]
                 })
         };
