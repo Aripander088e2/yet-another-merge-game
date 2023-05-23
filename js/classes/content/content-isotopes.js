@@ -10,10 +10,10 @@ class ContentIsotopes {
                         price = price.add(level - 10)
                     }
                     if (level > 25) {
-                        price = price.add((level - 25) * 2)
+                        price = price.add((level - 25) * 1.2)
                     }
                     if (level > 50) {
-                        price = price.add((level - 25) * 4)
+                        price = price.add((level - 25) * 1.4)
                     }
                     let priceMult = Decimal.pow(1.5, Math.max(0, 1 + Math.floor((level - 70) / 10)));
                     return price.mul(priceMult);
