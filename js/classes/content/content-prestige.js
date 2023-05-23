@@ -10,7 +10,7 @@ class ContentPrestige {
                     return new Decimal(2).mul(level + 1).mul(level > 10 ? Decimal.pow(1.1, level - 10) : 1);
                 },
                 level => {
-                    return new Decimal(1 + 0.025 * level);
+                    return new Decimal(1 + 0.12 * level);
                 }, {
                 getEffectDisplay: effectDisplayTemplates.percentStandard("", 1),
                 maxLevel: 2500
