@@ -7,17 +7,17 @@ class ContentPrestige {
         this.upgrades = {
             fasterMergers: new PrestigeUpgrade("Faster Mergers", "Mergers spawn and move Faster",
                 level => {
-                    return new Decimal(10).mul(level + 1).mul(level > 10 ? Decimal.pow(1.1, level - 10) : 1);
+                    return new Decimal(2).mul(level + 1).mul(level > 10 ? Decimal.pow(1.1, level - 10) : 1);
                 },
                 level => {
                     return new Decimal(1 + 0.025 * level);
                 }, {
                 getEffectDisplay: effectDisplayTemplates.percentStandard("", 1),
-                maxLevel: 25
+                maxLevel: 2500
             }),
             matterBoost: new PrestigeUpgrade("Matter Boost", "Boost Matter Production even further.",
                 level => {
-                    return new Decimal(100).add(new Decimal(50).mul(Math.pow(level, 1.25)).mul(level > 10 ? Decimal.pow(1.25, level - 10) : 1));
+                    return new Decimal(10).add(new Decimal(50).mul(Math.pow(level, 1.25)).mul(level > 10 ? Decimal.pow(1.25, level - 10) : 1));
                 },
                 level => {
                     return new Decimal(1 + 0.3 * level).mul(level >= 4 ? Math.pow(level - 3, 0.25) : 1);
@@ -27,7 +27,7 @@ class ContentPrestige {
                 }),
             foamBoost: new PrestigeUpgrade("Quantum Foam Boost", "Get more Quantum Foam.",
                 level => {
-                    return new Decimal(200).mul(Decimal.pow(1.5, level));
+                    return new Decimal(20).mul(Decimal.pow(1.5, level));
                 },
                 level => {
                     return new Decimal(1 + 0.2 * level).add(level > 4 ? (level - 4) * 0.05 : 0);
@@ -37,13 +37,13 @@ class ContentPrestige {
                 }),
             headStart: new PrestigeUpgrade("Head Start", "Get free Matter on Prestige",
                 level => {
-                    return new Decimal(500).mul(Decimal.pow(1.5, level)).mul(Decimal.pow(1.5, Math.max(level - 10, 0)));
+                    return new Decimal(50).mul(Decimal.pow(1.25, level)).mul(Decimal.pow(1.25, Math.max(level - 10, 0)));
                 },
                 level => {
                     return level > 0 ? (new Decimal(10e6).mul(Decimal.pow(50, level - 1))) : new Decimal(0);
                 }, {
                 getEffectDisplay: effectDisplayTemplates.numberStandard("", ""),
-                maxLevel: 100,
+                maxLevel: 1000,
                 onBuy(){
                     game.matter.amount = Decimal.max(game.matter.amount, this.apply());
                 }
