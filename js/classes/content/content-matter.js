@@ -53,7 +53,7 @@ class ContentMatter {
                 }),
             maxObjects: new Upgrade("Max Objects", "Increase the Max Amount of Mergers that can be on screen at once.",
                 level => {
-                    return (new Decimal(1e4).mul(Decimal.pow(3, level * level + level * 3))).pow(Decimal.pow(1.02, Math.max(level - 16, 0)));
+                    return (new Decimal(1e4).mul(Decimal.pow(1.25, level * level + level * 3))).pow(Decimal.pow(1.02, Math.max(level - 16, 0)));
                 },
                 level => {
                     return Decimal.round(new Decimal(6 + level));
