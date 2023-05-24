@@ -18,7 +18,7 @@ class ContentIsotopes {
                     let priceMult = Decimal.pow(1.5, Math.max(0, 1 + Math.floor((level - 70) / 10)));
                     return price.mul(priceMult);
                 },
-                level => new Decimal(0.01 + 0.01 * level),
+                level => new Decimal(0.01 + 0.05 * level),
                 {
                     getEffectDisplay: effectDisplayTemplates.percentStandard(),
                     maxLevel: 99
