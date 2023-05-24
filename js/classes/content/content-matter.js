@@ -5,8 +5,8 @@ class ContentMatter {
         this.upgrades = {
             fasterSpawn: new Upgrade("Faster Spawn", "The cooldown Between Merges spawning is reduced.",
                 level => {
-                    let priceMult = level > 35 ? Decimal.pow(3, Math.pow(level - 35, 1.5)) : new Decimal(1);
-                    return new Decimal(1e3).mul(Decimal.pow(3, Math.pow(level, 1.1))).mul(priceMult);
+                    let priceMult = level > 35 ? Decimal.pow(3, Math.pow(level - 35, 1.0)) : new Decimal(1);
+                    return new Decimal(1e3).mul(Decimal.pow(3, Math.pow(level, 1.05))).mul(priceMult);
                 },
                 level => {
                     return new Decimal(5 * Math.pow(0.975, Math.min(50, level)) / (1 + Math.max(0, level - 50) * 0.01))
@@ -53,14 +53,14 @@ class ContentMatter {
                 }),
             maxObjects: new Upgrade("Max Objects", "Increase the Max Amount of Mergers that can be on screen at once.",
                 level => {
-                    return (new Decimal(1e7).mul(Decimal.pow(10, level * level + level * 3))).pow(Decimal.pow(1.1, Math.max(level - 16, 0)));
+                    return (new Decimal(1e4).mul(Decimal.pow(3, level * level + level * 3))).pow(Decimal.pow(1.02, Math.max(level - 16, 0)));
                 },
                 level => {
                     return Decimal.round(new Decimal(6 + level));
                 },
                 {
                     getEffectDisplay: effectDisplayTemplates.numberStandard("", "", 0),
-                    maxLevel: 43
+                    maxLevel: 1000
                 }),
             matterOnMerge: new Upgrade("Matter on Merge", "Increase the Chance of getting 2 Seconds of your total Matter per Second on Merge.",
                 level => new Decimal(1e18).mul(Decimal.pow(3e3, level)),
