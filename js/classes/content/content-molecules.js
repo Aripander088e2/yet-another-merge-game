@@ -2,7 +2,7 @@ class ContentMolecules {
     constructor() {
         this.amount = new Decimal(0);
         this.molecules = [
-            new Molecule("H₂O - Water", "images/molecules/water.png", new Decimal(0), 150, level => Decimal.pow(4, level)),
+            new Molecule("H₂O - Water", "images/molecules/water.png", new Decimal(0), 100, level => Decimal.pow(4, level)),
             new Molecule("NaCl - Salt", "images/molecules/salt.png", new Decimal(1e15), 250, level => Decimal.pow(10, level).mul(2)),
             new Molecule("CH₄ - Methane", "images/molecules/methane.png", new Decimal(1e24), 400, level => Decimal.pow(64, level ** 1.1).mul(3)),
             new Molecule("C₆ - Carbon Ring", "images/currencies/molecules.png", new Decimal(1e93), 650, level => Decimal.pow(16384, level ** 1.25).mul(4)),
@@ -62,7 +62,7 @@ class ContentMolecules {
 
     getMergeReduction() {
         let totalLvls = this.getTotalUpgradeLevels();
-        return 0.99 ** Math.min(100, totalLvls) / (1 + 0.0001 * Math.max(0, totalLvls - 100)) 
+        return 0.97 ** Math.min(100, totalLvls) / (1 + 0.0001 * Math.max(0, totalLvls - 100)) 
             * Upgrade.apply(game.molecules.upgrades.fasterMolecules).toNumber();
     }
 
