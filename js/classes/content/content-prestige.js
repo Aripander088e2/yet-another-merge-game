@@ -13,7 +13,7 @@ class ContentPrestige {
                     return new Decimal(1 + 0.20 * level);
                 }, {
                 getEffectDisplay: effectDisplayTemplates.percentStandard("", 1),
-                maxLevel: 40
+                maxLevel: 55
             }),
             matterBoost: new PrestigeUpgrade("Matter Boost", "Boost Matter Production even further.",
                 level => {
