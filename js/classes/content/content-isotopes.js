@@ -28,7 +28,7 @@ class ContentIsotopes {
                 level => new Decimal((level > 0 ? 0.1 : 0) + 0.02 * Math.max(0, level - 1)),
                 {
                     getEffectDisplay: effectDisplayTemplates.percentStandard(),
-                    maxLevel: 25
+                    maxLevel: 40
                 }),
             matterBoost: new IsotopeUpgrade("Matter Boost", "Produce even more matter",
                 level => new Decimal(100 + 125 * level).mul(Decimal.pow(1.3, Math.floor(Math.max(0, level - 100) / 25))).round(),
@@ -37,10 +37,10 @@ class ContentIsotopes {
                     getEffectDisplay: effectDisplayTemplates.numberStandard()
                 }),
             spawnSpeed: new IsotopeUpgrade("Spawn Speed", "Merger Spawn Time is reduced even further",
-                level => new Decimal(1000 + 20 * level ** 2).round(),
+                level => new Decimal(800 + 20 * level ** 2).round(),
                 level => Decimal.pow(0.97, level),
                 {
-                    maxLevel: 50,
+                    maxLevel: 60,
                     getEffectDisplay: effectDisplayTemplates.numberStandard("x", "", 3, 3)
                 }),
             autoQuantumFoam: new IsotopeUpgrade("Automatic Foam", "Get a percentage of potential Quantum Foam each Second",
@@ -53,7 +53,7 @@ class ContentIsotopes {
             socialBoost: new IsotopeUpgrade("Social Power", "Social Boost is raised to a power", 
                 level => new Decimal(2022),
                 level => new Decimal(1 + level), {
-                    maxLevel: 1,
+                    maxLevel: 3,
                     getEffectDisplay: effectDisplayTemplates.numberStandard("^", "", 0)
                 })
         };
