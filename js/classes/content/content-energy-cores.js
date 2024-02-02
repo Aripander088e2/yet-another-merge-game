@@ -17,24 +17,24 @@ class ContentEnergyCores {
                 }, "energycores/neutrino.png"),
             new EnergyCore("Gluon", new Decimal(500e6),
                 level => {
-                    return 200 + 50 * level;
+                    return 200 + 10 * level;
                 },
                 level => {
                     return new Decimal(3 + 2 * level).mul(Decimal.pow(1.3, level));
                 }, "energycores/gluon.png"),
             new EnergyCore("Electron", new Decimal(100e9),
                 level => {
-                    return 50 + Math.floor(Math.max(0, level - 150));
+                    return 30 + Math.floor(Math.max(0, level - 350));
                 },
                 level => {
-                    return new Decimal(2 + 0.1 * level).mul(Decimal.pow(1.015, level));
+                    return new Decimal(2 + 0.1 * level).mul(Decimal.pow(1.035, level));
                 }, "energycores/electron.png"),
             new EnergyCore("Muon", new Decimal(500e12),
                 level => {
-                    return 100 + 25 * level;
+                    return 100 + 15 * level;
                 },
                 level => {
-                    return new Decimal(3 + level).mul(Decimal.pow(1.175, level));
+                    return new Decimal(3 + level).mul(Decimal.pow(1.475, level));
                 }, "energycores/muon.png")
         ];
     }
