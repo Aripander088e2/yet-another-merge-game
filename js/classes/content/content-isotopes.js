@@ -37,7 +37,7 @@ class ContentIsotopes {
                     getEffectDisplay: effectDisplayTemplates.numberStandard()
                 }),
             spawnSpeed: new IsotopeUpgrade("Spawn Speed", "Merger Spawn Time is reduced even further",
-                level => new Decimal(800 + 20 * level ** 2).round(),
+                level => new Decimal(300 + 20 * level ** 2).round(),
                 level => Decimal.pow(0.97, level),
                 {
                     maxLevel: 60,
