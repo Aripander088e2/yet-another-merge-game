@@ -38,9 +38,9 @@ class ContentIsotopes {
                 }),
             spawnSpeed: new IsotopeUpgrade("Spawn Speed", "Merger Spawn Time is reduced even further",
                 level => new Decimal(300 + 20 * level ** 2).round(),
-                level => Decimal.pow(0.97, level),
+                level => Decimal.pow(0.94, level),
                 {
-                    maxLevel: 60,
+                    maxLevel: 600,
                     getEffectDisplay: effectDisplayTemplates.numberStandard("x", "", 3, 3)
                 }),
             autoQuantumFoam: new IsotopeUpgrade("Automatic Foam", "Get a percentage of potential Quantum Foam each Second",
