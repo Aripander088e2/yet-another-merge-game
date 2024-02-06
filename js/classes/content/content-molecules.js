@@ -18,7 +18,7 @@ class ContentMolecules {
             fasterEnergyCores: new MoleculeUpgrade("Faster Energy Cores", "Energy Cores will take less Merges to Level up. The effect will take place immediately.",
                 level => Decimal.pow(1e3, level ** 3 + 3),
                 level => Decimal.pow(0.95, level), {
-                maxLevel: 100,
+                maxLevel: 10000,
                 getEffectDisplay: effectDisplayTemplates.numberStandard("x", "", 2, 3)
             }),
             moreIsotopes: new MoleculeUpgrade("Isotope Multiplier", "Finally, it's time to really get them going! Get more Isotopes at once when two Mergers collide.",
