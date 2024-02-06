@@ -22,7 +22,7 @@ class ContentMolecules {
                 getEffectDisplay: effectDisplayTemplates.numberStandard("x", "", 2, 3)
             }),
             moreIsotopes: new MoleculeUpgrade("Isotope Multiplier", "Finally, it's time to really get them going! Get more Isotopes at once when two Mergers collide.",
-                level => Decimal.pow(1e6, level ** 4 + 4),
+                level => Decimal.pow(1e6, level ** 2.5 + 3),
                 level => new Decimal(1 + level)),
             mergerLevelExponent: new MoleculeUpgrade("Merger Exponentiality", "The production difference between Mergers used to be 5x... NO MORE!",
                 level => Decimal.pow(1e30, level ** 5 + 5),
@@ -30,7 +30,7 @@ class ContentMolecules {
                 getEffectDisplay: effectDisplayTemplates.numberStandard("x", "", 7)
             }),
             fasterMolecules: new MoleculeUpgrade("Faster Molecules", "Molecules will take less merges to level up. The effect will take place immediately.",
-                level => Decimal.pow(4, level ** 6 + 12),
+                level => Decimal.pow(4, level ** 5 + 12),
                 level => Decimal.pow(0.95, level), {
                 maxLevel: 100,
                 getEffectDisplay: effectDisplayTemplates.numberStandard("x", "", 2)
